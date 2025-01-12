@@ -653,3 +653,1416 @@
 2024-10-03 17:00:00 [INFO]: Проверка дня рождения для Default Admin, осталось дней: 90 
 2024-10-03 17:00:00 [INFO]: Проверка повышения зарплаты для Default Admin, осталось дней: 182 
 2024-10-03 17:00:00 [INFO]: Удалено 0 старых прочитанных уведомлений 
+2025-01-09 13:01:59 [ERROR]: Ошибка синхронизации базы данных: database "employee_db" does not exist {
+  "name": "SequelizeConnectionError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "FATAL",
+    "code": "3D000",
+    "file": "postinit.c",
+    "line": "1021",
+    "routine": "InitPostgres"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "FATAL",
+    "code": "3D000",
+    "file": "postinit.c",
+    "line": "1021",
+    "routine": "InitPostgres"
+  },
+  "stack": "SequelizeConnectionError: database \"employee_db\" does not exist\n    at Client._connectionCallback (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js:145:24)\n    at Client._handleErrorWhileConnecting (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\client.js:326:19)\n    at Client._handleErrorMessage (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\client.js:346:19)\n    at Connection.emit (node:events:519:28)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\connection.js:116:12\n    at Parser.parse (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg-protocol\\dist\\parser.js:36:17)\n    at Socket.<anonymous> (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg-protocol\\dist\\index.js:11:42)\n    at Socket.emit (node:events:519:28)\n    at addChunk (node:internal/streams/readable:559:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)"
+}
+2025-01-09 14:00:00 [INFO]: Запуск ежедневной проверки уведомлений 
+2025-01-09 14:00:00 [INFO]: Администраторы загружены {
+  "count": 1
+}
+2025-01-09 14:00:00 [INFO]: Пользователи загружены {
+  "count": 1
+}
+2025-01-09 14:00:00 [INFO]: Проверка дня рождения для Default Admin, осталось дней: 357 
+2025-01-09 14:00:00 [INFO]: Проверка повышения зарплаты для Default Admin, осталось дней: 181 
+2025-01-09 14:00:00 [INFO]: Удалено 0 старых прочитанных уведомлений 
+2025-01-09 15:11:50 [ERROR]: Ошибка синхронизации базы данных: database "employee_db_test" does not exist {
+  "name": "SequelizeConnectionError",
+  "parent": {
+    "length": 102,
+    "name": "error",
+    "severity": "FATAL",
+    "code": "3D000",
+    "file": "postinit.c",
+    "line": "1038",
+    "routine": "InitPostgres"
+  },
+  "original": {
+    "length": 102,
+    "name": "error",
+    "severity": "FATAL",
+    "code": "3D000",
+    "file": "postinit.c",
+    "line": "1038",
+    "routine": "InitPostgres"
+  },
+  "stack": "SequelizeConnectionError: database \"employee_db_test\" does not exist\n    at Client._connectionCallback (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\connection-manager.js:145:24)\n    at Client._handleErrorWhileConnecting (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\client.js:326:19)\n    at Client._handleErrorMessage (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\client.js:346:19)\n    at Connection.emit (node:events:519:28)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg\\lib\\connection.js:116:12\n    at Parser.parse (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg-protocol\\dist\\parser.js:36:17)\n    at Socket.<anonymous> (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\pg-protocol\\dist\\index.js:11:42)\n    at Socket.emit (node:events:519:28)\n    at addChunk (node:internal/streams/readable:559:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)\n    at Readable.push (node:internal/streams/readable:390:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:191:23)"
+}
+2025-01-09 15:12:32 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-09 15:13:20 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-09 15:13:33 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-09 15:17:59 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:41:16 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:44:45 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:45:17 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:45:43 [ERROR]: Ошибка синхронизации базы данных: could not open relation with OID 17800 {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.showIndex (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:254:12)\n    at async User.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:988:29)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:46:42 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:47:38 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:47:56 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:48:27 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:49:41 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:49:51 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:50:31 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:51:08 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 10:52:02 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:01:48 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:04:40 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:07:27 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:26:05 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:27:19 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:28:13 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:28:23 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:30:39 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:31:16 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:34:04 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:34:38 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:35:41 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:35:47 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:40:34 [ERROR]: Ошибка синхронизации базы данных: could not open relation with OID 19036 {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.showIndex (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:254:12)\n    at async User.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:988:29)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:40:34 [ERROR]: 500 - Cannot read properties of null (reading 'update') - /users/2000 - PUT - ::ffff:127.0.0.1 
+2025-01-10 11:40:54 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:41:14 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:42:13 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:42:24 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:43:10 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:57:40 [ERROR]: Ошибка синхронизации базы данных: could not open relation with OID 19299 {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.showIndex (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:254:12)\n    at async User.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:988:29)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:58:04 [ERROR]: Ошибка синхронизации базы данных: could not open relation with OID 19334 {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.showIndex (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:254:12)\n    at async User.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:988:29)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 11:58:49 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:02:42 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:05:32 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:10:20 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:10:28 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:10:36 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:10:59 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:11:10 [ERROR]: Ошибка синхронизации базы данных: could not open relation with OID 19685 {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "original": {
+    "length": 97,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "XX000",
+    "file": "relation.c",
+    "line": "62",
+    "routine": "relation_open",
+    "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;"
+  },
+  "sql": "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a, pg_namespace s WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' AND s.oid = t.relnamespace AND s.nspname = 'public' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.showIndex (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:254:12)\n    at async User.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:988:29)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:13:44 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:29:30 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:30:51 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:30:52 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - PUT - ::ffff:127.0.0.1 
+2025-01-10 12:30:52 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - DELETE - ::ffff:127.0.0.1 
+2025-01-10 12:31:45 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:31:45 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - PUT - ::ffff:127.0.0.1 
+2025-01-10 12:31:45 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - DELETE - ::ffff:127.0.0.1 
+2025-01-10 12:32:35 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}
+2025-01-10 12:32:36 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - PUT - ::ffff:127.0.0.1 
+2025-01-10 12:32:36 [ERROR]: 500 - invalid input syntax for type integer: "undefined" - /users/undefined - DELETE - ::ffff:127.0.0.1 
+2025-01-10 12:33:08 [ERROR]: Ошибка синхронизации базы данных: relation "public.Users" does not exist {
+  "name": "SequelizeDatabaseError",
+  "parent": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "original": {
+    "length": 110,
+    "name": "error",
+    "severity": "ERROR",
+    "code": "42P01",
+    "file": "namespace.c",
+    "line": "432",
+    "routine": "RangeVarGetRelidExtended",
+    "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"
+  },
+  "sql": "CREATE TABLE IF NOT EXISTS \"public\".\"Notifications\" (\"id\"   SERIAL , \"message\" VARCHAR(255) NOT NULL, \"userId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"relatedUserId\" INTEGER NOT NULL REFERENCES \"public\".\"Users\" (\"id\") ON DELETE CASCADE ON UPDATE CASCADE, \"isRead\" BOOLEAN DEFAULT false, \"type\" VARCHAR(255) NOT NULL DEFAULT 'general', \"eventDate\" TIMESTAMP WITH TIME ZONE, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));",
+  "parameters": {},
+  "stack": "Error\n    at Query.run (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\postgres\\query.js:50:25)\n    at D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:315:28\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async PostgresQueryInterface.createTable (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\dialects\\abstract\\query-interface.js:98:12)\n    at async Notification.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\model.js:942:7)\n    at async Sequelize.sync (D:\\TestSquadProjects\\managment-api-docker\\node_modules\\sequelize\\lib\\sequelize.js:377:9)"
+}

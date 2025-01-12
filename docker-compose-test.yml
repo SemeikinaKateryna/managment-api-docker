@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  api_and_test:
+    build: .
+    container_name: my_api_start_and_test
+    environment:
+      - NODE_ENV=startAndTest
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=my_database
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - JWT_SECRET=your_jwt_secret
+      - SECRET_WORD=your_secret_word
+    depends_on:
+      - db
+    volumes:
+      - ./:/app
+    ports:
+      - '3000:3000'
+    command: sh -c "npm run start-and-test"
+  
+  db:
+    image: postgres:16
+    container_name: my_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=my_database
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

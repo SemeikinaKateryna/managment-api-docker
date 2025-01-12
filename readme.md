@@ -31,11 +31,7 @@ Employees can update their personal information, such as name, contact details, 
    ```sh
    git clone https://github.com/dreamquality/employee-management-api.git
    ```
-2. Navigate to the project directory:
-   ```sh
-   cd employee-management-api
-   ```
-3. Install dependencies:
+2. Install dependencies:
    ```sh
    npm install
    ```
@@ -78,101 +74,40 @@ Start the server in development mode:
    ```
 The server will be running at `http://localhost:3000`.
 
+### Running the Tests
+
+The 5 tests was developed and located in a file `users_api.test.js`. To run the developed tests locally use the command:
+   ```sh
+   npm run test
+   ```
+
 ### API Documentation
 
 Access the interactive API documentation at [http://localhost:3000/api-docs](http://localhost:3000/api-docs) if Swagger or a similar tool is set up. This documentation provides a complete view of the available endpoints and allows for interactive testing.
 
-## Deployment
-
-### Deploying to Render.com
-
-1. **Create a Render Account**: Sign up at [Render.com](https://render.com/) and create a new Web Service.
-2. **Connect GitHub Repository**: Link your GitHub repository to Render.
-3. **Environment Variables**:
-   - Set up environment variables (`DATABASE_URL`, `JWT_SECRET`, and any others you need) in the Render dashboard.
-   - If using a PostgreSQL database on Render, you can set up a managed PostgreSQL instance and update `DATABASE_URL` accordingly.
-4. **Build Command**: Use `npm install` to install dependencies.
-5. **Start Command**: Use `npm start` to start the application in production mode.
-
-Render will handle the deployment automatically, and your API will be live at the URL provided by Render.
-
 ### Docker
 
-This application can also be containerized using Docker. Here’s how to set it up:
+This application can also be containerized using Docker. Here’s how it was setted up:
 
-1. **Create a Dockerfile**: Add a `Dockerfile` to the root of the project with the following content:
+1. **Dockerfile**: Added a `Dockerfile` to the root of the project with the name `docker-compose-test.yml` with ability of running API and tests locally by one command. 
+In this file the new environment `startAndTest` is used.
 
-   ```dockerfile
-   # Use Node.js as the base image
-   FROM node:16
-
-   # Create app directory
-   WORKDIR /app
-
-   # Install app dependencies
-   COPY package*.json ./
-   RUN npm install
-
-   # Bundle app source
-   COPY . .
-
-   # Expose the port the app runs on
-   EXPOSE 3000
-
-   # Define environment variable
-   ENV NODE_ENV=production
-
-   # Start the app
-   CMD ["npm", "start"]
-   ```
-
-2. **Create a Docker Compose file** (optional): If you need to run PostgreSQL along with the API, add a `docker-compose.yml` file:
-
-   ```yaml
-   version: '3'
-   services:
-     db:
-       image: postgres:16
-       environment:
-         POSTGRES_USER: your_db_user
-         POSTGRES_PASSWORD: your_db_password
-         POSTGRES_DB: employee_db
-       ports:
-         - "5432:5432"
-       volumes:
-         - pgdata:/var/lib/postgresql/data
-
-     api:
-       build: .
-       environment:
-         PORT: 3000
-         JWT_SECRET: your_jwt_secret
-         DB_HOST: db
-         DB_PORT: 5432
-         DB_NAME: employee_db
-         DB_USER: your_db_user
-         DB_PASSWORD: your_db_password
-         SECRET_WORD: your_secret_word_for_admin_registration
-       ports:
-         - "3000:3000"
-       depends_on:
-         - db
-
-   volumes:
-     pgdata:
+2. To run API and tests locally in a docker file use this command:
+   ```sh 
+   npm run start-and-test
    ```
 
 3. **Build and Run the Docker Container**:
    - To build and run the container using Docker Compose, run:
      ```sh
-     docker-compose up --build
+     docker:compose:up:start-and-test
      ```
-   - This command will start both the PostgreSQL database and the API server. The API will be accessible at `http://localhost:3000`.
+   - This command will start both the PostgreSQL database, the API server and developed 5 tests. The API will be accessible at `http://localhost:3000`.
 
 4. **Stopping and Removing Containers**:
    - To stop and remove containers, along with associated volumes, run:
      ```sh
-     docker-compose down -v
+     docker:compose:down:start-and-test
      ```
 
 ## API Documentation
