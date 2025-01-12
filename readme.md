@@ -29,7 +29,7 @@ Employees can update their personal information, such as name, contact details, 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/dreamquality/employee-management-api.git
+   git clone
    ```
 2. Install dependencies:
    ```sh
